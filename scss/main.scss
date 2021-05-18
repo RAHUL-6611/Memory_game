@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,100;1,200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300&display=swap');
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{  
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-direction: unset;
+    min-height: 100vh;
+    background: rgb(64, 255, 0);     
+}
+
+.container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #000;
+    width: 80%;
+    min-height: 80vh;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 40px 0; 
+    box-shadow: 10px 14px 5px 2px transparent,
+    10px 14px 5px 12px transparent,
+    -5px -6px 12px 1px rgba(255, 255, 255,0.6),
+    5px 4px 10px 10px rgba(0, 0, 0,0.5);
+
+    #time
+    {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size:24px;
+        color: red;
+        background: #fff;
+        border-radius: 6px;
+        padding:0 10px;
+    }
+    h1{
+        margin: 20px 0 10px 0;
+        font-size: 24px;
+        color: #fff;
+        
+        // margin-right: 30px;
+
+        // code{
+
+        //     // width: 300px;
+        //     font-size: 18px;
+        //     letter-spacing: 3px;
+        //     text-align: right;
+        // }
+
+    }
+
+    .score
+    {
+        position: absolute;
+        right: 0px;
+        top: 30px;
+        width: 200px;
+        height: 100px;
+
+        h3
+        {
+            font-size:20px;
+            color:#fff;
+        }
+    }
+
+    .box{
+        margin: 40px 0;
+        position: relative;
+        width: 95%;
+        // height: 80%;
+        min-height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .boxes
+        {
+            position: relative;
+            width: 10vw;
+            height: 17vh;
+            background: #333;
+            // offset: 20px;
+            outline: 2px solid #fff;
+            outline-offset: 6px;
+            margin: 10px;
+            // margin-bottom: -20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // flex-direction: unset;
+            transition: .5s;
+            transform-style: preserve-3d;
+
+
+            .front
+            {
+                position: absolute;
+                width: 6vw;
+                height: 14vh;
+                // backface-visibility: hidden;
+
+                img
+                {
+                width: 6vw;
+                height: 14vh;
+                backface-visibility: hidden;
+                transform: rotateY(180deg);
+
+
+                }
+            }
+
+            .back 
+            {
+                position: absolute;
+                width: 6vw;
+                height: 14vh;
+                // backface-visibility: hidden;
+                
+                img
+                {
+                    width: 6vw;
+                    height: 14vh;
+                    backface-visibility: hidden;
+
+                }
+
+            }
+
+            &.flip
+            {
+                transform: rotateY(180deg) perspective(100px);
+            }
+        }
+    }
+}
